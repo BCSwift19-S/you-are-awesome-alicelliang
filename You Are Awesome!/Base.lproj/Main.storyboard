@@ -18,6 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT3-cp-ltW">
+                                <rect key="frame" x="255" y="128" width="104" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="8Fc-iy-ZFF"/>
+                                    <constraint firstAttribute="height" constant="30" id="tUo-UW-quN"/>
+                                </constraints>
+                                <state key="normal" title="Show Message"/>
+                                <connections>
+                                    <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PIq-yf-KVX"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Vv-Ot-Pvz">
                                 <rect key="frame" x="16" y="166" width="343" height="463"/>
                             </imageView>
@@ -30,25 +41,34 @@
                                 <color key="textColor" red="0.54225677251815796" green="0.14468467235565186" blue="0.090809054672718048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT3-cp-ltW">
-                                <rect key="frame" x="120" y="128" width="135" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JM-un-Tqe">
+                                <rect key="frame" x="16" y="133" width="91" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7Vh-wr-Dyu"/>
-                                    <constraint firstAttribute="width" constant="135" id="vpi-Lz-5bk"/>
+                                    <constraint firstAttribute="width" constant="91" id="cwO-7v-bmx"/>
+                                    <constraint firstAttribute="height" constant="21" id="obQ-AI-aaL"/>
                                 </constraints>
-                                <state key="normal" title="Show Message"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64G-J2-NAQ">
+                                <rect key="frame" x="115" y="128" width="51" height="31"/>
                                 <connections>
-                                    <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PIq-yf-KVX"/>
+                                    <action selector="soundSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mem-d7-8Wk"/>
                                 </connections>
-                            </button>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="80o-wy-XiI" secondAttribute="trailing" constant="16" id="2JT-ih-Tjz"/>
-                            <constraint firstItem="qT3-cp-ltW" firstAttribute="top" secondItem="80o-wy-XiI" secondAttribute="bottom" constant="8" id="5Ty-Vv-npO"/>
+                            <constraint firstItem="9JM-un-Tqe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="58I-Aa-jI1"/>
+                            <constraint firstItem="9JM-un-Tqe" firstAttribute="top" secondItem="80o-wy-XiI" secondAttribute="bottom" constant="13" id="88E-41-XgS"/>
                             <constraint firstItem="4Vv-Ot-Pvz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="AnT-JN-9Qm"/>
-                            <constraint firstItem="4Vv-Ot-Pvz" firstAttribute="top" secondItem="qT3-cp-ltW" secondAttribute="bottom" constant="8" id="CQY-PZ-OGQ"/>
-                            <constraint firstItem="qT3-cp-ltW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eC8-1h-LbG"/>
+                            <constraint firstItem="qT3-cp-ltW" firstAttribute="top" secondItem="80o-wy-XiI" secondAttribute="bottom" constant="8" id="EBL-sE-gN6"/>
+                            <constraint firstItem="4Vv-Ot-Pvz" firstAttribute="top" secondItem="qT3-cp-ltW" secondAttribute="bottom" constant="8" symbolic="YES" id="TW3-nf-8cg"/>
+                            <constraint firstItem="64G-J2-NAQ" firstAttribute="top" secondItem="80o-wy-XiI" secondAttribute="bottom" constant="8" id="VIz-Xj-tom"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qT3-cp-ltW" secondAttribute="trailing" constant="16" id="Ydt-jC-W5P"/>
+                            <constraint firstItem="64G-J2-NAQ" firstAttribute="leading" secondItem="9JM-un-Tqe" secondAttribute="trailing" constant="8" id="aXY-Yx-2tB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Vv-Ot-Pvz" secondAttribute="trailing" constant="16" id="gkR-mW-t2p"/>
                             <constraint firstItem="80o-wy-XiI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lI9-1U-mVb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Vv-Ot-Pvz" secondAttribute="bottom" constant="38" id="zUl-xe-zaG"/>
@@ -59,6 +79,7 @@
                     <connections>
                         <outlet property="awesomeImageView" destination="4Vv-Ot-Pvz" id="Bo6-hy-Dd5"/>
                         <outlet property="messageLabel" destination="80o-wy-XiI" id="42B-9n-ckK"/>
+                        <outlet property="soundSwitch" destination="64G-J2-NAQ" id="NBV-Dt-V7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
