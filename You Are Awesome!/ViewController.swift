@@ -27,14 +27,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func nonRepeatingRandom(lastNumber: Int, maxValue: Int) ->Int {
-        var newIndex: Int // or var newIndex = -1
-        repeat{
-            newIndex = Int.random(in: 0..<maxValue)
-        } while lastNumber == newIndex
-        return newIndex
-    }
-    
     func playSound(soundName: String, audioPlayer: inout AVAudioPlayer) {
         //        Can we load in the file soundName?
         if let sound = NSDataAsset(name: soundName){
@@ -52,12 +44,20 @@ class ViewController: UIViewController {
         }
     }
     
+    func nonRepeatingRandom(lastNumber: Int, maxValue: Int) ->Int {
+        var newIndex: Int // or var newIndex = -1
+        repeat{
+            newIndex = Int.random(in: 0..<maxValue)
+        } while lastNumber == newIndex
+        return newIndex
+    }
+    
     @IBAction func soundSwitchPressed(_ sender: UISwitch) {
         if soundSwitch.isOn == false && soundIndex != -1 {
             awesomePlayer.stop()
-
         }
     }
+    
     @IBAction func showMessagePressed(_ sender: UIButton) {
         
         let messages = ["You Are Awesome!",
